@@ -225,15 +225,18 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 [ Top bar ]*/
 .top-bar {
   height: 40px;
-  background-color: #222;
+  background-color: #d8980d;
 }
 
 /*---------------------------------------------*/
 .left-top-bar {
   font-family: Poppins-Regular;
-  font-size: 12px;
+  font-size: 17px;
   line-height: 1.8;
-  color: #b2b2b2;
+  color: #f90606;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 
@@ -259,9 +262,14 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*---------------------------------------------*/
 .topbar-mobile li {
-  padding: 8px 20px;
+  padding: 20px 20px;
   border-top: 1px solid rgba(255,255,255,0.05);
-  background-color: #222;
+  background-color: #d8980d;
+  color: #f90606;
+  display: flex;
+  justify-content: center;
+  font-size: 21px;
+  padding-top: 80px;
 }
 
 
@@ -282,14 +290,6 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   -o-transition: height 0.3s, background-color 0.3s;
   -moz-transition: height 0.3s, background-color 0.3s;
   transition: height 0.3s, background-color 0.3s;
-}
-.search-bar{
- padding-top: 10px;
-  width: 100%;
-display: flex;
-justify-content: center;
-
-
 }
 
 .header-v2 .wrap-menu-desktop {
@@ -487,6 +487,15 @@ justify-content: center;
 
 .wrap-icon-header {
   flex-grow: 1;
+  
+
+}
+.search-bar{
+  width: 60%;
+
+}
+.search-basket{
+  color:#000;
 }
 
 .icon {
@@ -1238,10 +1247,12 @@ justify-content: center;
 }
 
 .item-slick1 {
-  height: calc(50vh - 20px);
+  height: calc(70vh - 20px);
+  
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  
  
 }
 
@@ -3345,6 +3356,11 @@ input.num-product::-webkit-inner-spin-button {
   }
   .respon5 {
   padding-left: 0px;
+  }
+  .topbar-mobile li {
+    
+    font-size: 15px;
+    padding-top: 80px;
   }
 
   
