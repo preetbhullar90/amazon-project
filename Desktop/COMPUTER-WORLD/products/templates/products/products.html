@@ -216,7 +216,7 @@
 				
 				<div class="block2">
 					{% if product.image %}
-					<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+					<a href="{% url 'product_detail' product.id %}" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 					<div class="block2-pic hov-img0 d-flex justify-content-center">
                 <img style="width: 150px;height:111px" src="{{product.image.url }}" alt="{{ product.name }}">
                 
@@ -228,12 +228,12 @@
 					<!-- <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6"> -->
 						<p class="justify-content-center d-flex">{{product.name}}</p>
 						{% else %}
-						<a href="" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+						<a href="{% url 'product_detail' product.id %}" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 							<img src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
 						</a>
+					</a>
 						{% endif %}
 
-					</a>
 					<!-- <a class="reviews" style="width: 100%; text-align:center;padding:20px 0px;" data-revoo-action=""reviews
 					href="https://mark.reevoo.com/reevoomark/en-GB/product?sku=870070&trkref=EBU">
 				<span style="color: rgb(255, 170, 0); margin-right:10px;"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-thin fa-star-half"></i></span>
@@ -252,12 +252,12 @@
 						
 					</ul>
 
-					<span class="stext-105 cl3" style="width: 100%; text-align:center;padding:20px 0px;font-weight: bold; font-size:20px;">
+					<span class="stext-105 cl3" style="width: 100%;display:block; text-align:center;padding:20px 0px;font-weight: bold; font-size:20px;">
 						£{{product.price }}
 					</span>
                     
                     <div style="width:100%;text-align:center;">
-					<div class="grid-item__buttons"><button  style="background-color: green;padding:7px; margin-right:7px;color:#fff;border-radius:10px;" class="button button--mini-basket button--small js-add-to-mini-basket" data-product-id="870070" data-ajax-basket-url="product.html" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="Add to Basket Button">Add to Basket</button>	
+					<div class="grid-item__buttons"><button  style="background-color: green;padding:7px;color:#fff;border-radius:10px;" class="button button--mini-basket button--small js-add-to-mini-basket" data-product-id="870070" data-ajax-basket-url="product.html" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="Add to Basket Button">Add to Basket</button>	
 						<a class="button button--secondary button--small" style="background-color: rgb(11, 161, 230);padding:8px;color:#fff;border-radius:10px;" href="file:///C:/Users/preet/Desktop/cozastore-master/product.html" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="More Info Button">More Info</a>
 					</div>
 

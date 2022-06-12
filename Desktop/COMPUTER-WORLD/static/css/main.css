@@ -337,8 +337,17 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .logo img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 60%;
+  max-height: 60%;
+  padding-left: 5px;
+}
+.logo-text{
+  color:#000; 
+  font-weight:bold;
+
+}
+ .logo>h3:hover{
+  color:#6c7ae0;
 }
 
 
