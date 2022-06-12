@@ -11,7 +11,7 @@
 
 {% block content %}
 <!-- Slider -->
- <section class="section-slide"> 
+ <!-- <section class="section-slide"> 
      <div class="wrap-slick1 ">
         <div class="slick1">
             <div class="item-slick1" style="background-image: url('{% static 'images/slide-01.jpg' %}');">
@@ -89,7 +89,7 @@
             </div>
         </div>
     </div> 
-</section> 
+</section>  -->
 
 
 
@@ -193,104 +193,67 @@
 
 
 
+<div class="container-fluid">
+	<div class="row">
+		<div class="col text-center" style="margin-top:10rem;">
+			<h2 class="logo-font">PRODUCTS</h2>
+			</div>
+		</div>
+	</div>
 
 
 
 
 <div class="bg0 m-t-23 p-b-140">
+	
 	<div class="container">	
-<div class="row isotope-grid">
-
-
-	<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women" style="padding-bottom:30px;">
-		
-        
-        <div class="block2">
-            <div class="block2-pic hov-img0">
-                <img src="https://static.independent.co.uk/2020/09/21/17/samsung%20monitor%20.jpg" alt="IMG-PRODUCT">
+	
+		<div class="row isotope-grid" style="margin-top:1rem;">
+			{% for product in products %}
+			<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women" style="padding-bottom:30px;">
+				
+				
+				
+				<div class="block2">
+					{% if product.image %}
+					<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+					<div class="block2-pic hov-img0 d-flex justify-content-center">
+                <img style="width: 150px;height:111px" src="{{product.image.url }}" alt="{{ product.name }}">
                 
-                {{products}}
-
-                
 			</div>
-
-			<div class="block2-txt flex-w flex-t p-t-14" style="padding-left:20px;">
-				<div class="block2-txt-child1 flex-col-l ">
-					<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-						<h5 class="justify-content-center d-flex">Samsung Monitor</h5>
-						
-					</a>
-
-
-					<a class="reviews" style="width: 100%; text-align:center;padding:20px 0px;" data-revoo-action=""reviews
-					href="https://mark.reevoo.com/reevoomark/en-GB/product?sku=870070&trkref=EBU">
-				<span style="color: rgb(255, 170, 0); margin-right:10px;"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-thin fa-star-half"></i></span>
-				 111 reviews</a>
-
-			
-					<ul>
-						<li>1920 x 1080 Full HD</li>
-						<li>HDMI & VGA</li>
-						<li>60Hz / 5ms Response Time</li>
-						<li>Panel Type: TN</li>
-						<li>Wall Mountable</li>
-					</ul>
-
-					<span class="stext-105 cl3" style="width: 100%; text-align:center;padding:20px 0px;font-weight: bold; font-size:20px;">
-						$16.64
-					</span>
-                    
-                    <div style="width:100%;text-align:center;">
-					<div class="grid-item__buttons"><button  style="background-color: green;padding:7px; margin-right:7px;color:#fff;border-radius:10px;" class="button button--mini-basket button--small js-add-to-mini-basket" data-product-id="870070" data-ajax-basket-url="product.html" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="Add to Basket Button">Add to Basket</button>	
-						<a class="button button--secondary button--small" style="background-color: rgb(11, 161, 230);padding:8px;color:#fff;border-radius:10px;" href="file:///C:/Users/preet/Desktop/cozastore-master/product.html" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="More Info Button">More Info</a>
-					</div>
-
-					
-	
-					</div>
-				
-
-
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women" style="padding-bottom:30px;">
 		
-        
-		<div class="block2">
-			<div class="block2-pic hov-img0">
-				<img src="https://static.independent.co.uk/2020/09/21/17/samsung%20monitor%20.jpg" alt="IMG-PRODUCT">
-
-			</div>
 
 			<div class="block2-txt flex-w flex-t p-t-14" style="padding-left:20px;">
 				<div class="block2-txt-child1 flex-col-l ">
-					<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-						<h5 class="justify-content-center d-flex">Samsung Monitor</h5>
-						
+					<!-- <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6"> -->
+						<p class="justify-content-center d-flex">{{product.name}}</p>
+						{% else %}
+						<a href="" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+							<img src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+						</a>
+						{% endif %}
+
 					</a>
-
-
-					<a class="reviews" style="width: 100%; text-align:center;padding:20px 0px;" data-revoo-action=""reviews
+					<!-- <a class="reviews" style="width: 100%; text-align:center;padding:20px 0px;" data-revoo-action=""reviews
 					href="https://mark.reevoo.com/reevoomark/en-GB/product?sku=870070&trkref=EBU">
 				<span style="color: rgb(255, 170, 0); margin-right:10px;"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-thin fa-star-half"></i></span>
-				 111 reviews</a>
+				 111 reviews</a> -->
+				 <p class="reviews" style="width: 100%; text-align:center;padding:20px 0px;">
+					 {% if product.rating %}
+					<span><i style="color: rgb(255, 170, 0); margin-right:10px;" class="fa fa-star"></i>{{ product.rating }} / 5</span>
+					{% else %}
+					<small class="text-muted">No Rating</small>
+				{% endif %}
+				 </p>
 
-			
 					<ul>
-						<li>1920 x 1080 Full HD</li>
-						<li>HDMI & VGA</li>
-						<li>60Hz / 5ms Response Time</li>
-						<li>Panel Type: TN</li>
-						<li>Wall Mountable</li>
+						<li>{{product.description }}</li>
+						
+						
 					</ul>
 
 					<span class="stext-105 cl3" style="width: 100%; text-align:center;padding:20px 0px;font-weight: bold; font-size:20px;">
-						$16.64
+						£{{product.price }}
 					</span>
                     
                     <div style="width:100%;text-align:center;">
@@ -298,348 +261,21 @@
 						<a class="button button--secondary button--small" style="background-color: rgb(11, 161, 230);padding:8px;color:#fff;border-radius:10px;" href="file:///C:/Users/preet/Desktop/cozastore-master/product.html" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="More Info Button">More Info</a>
 					</div>
 
-					
-	
 					</div>
-				
-
-
-
+					
 				</div>
 			</div>
+			<hr>
+			
 		</div>
-	</div>
-
-
-	<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women" style="padding-bottom:30px;">
 		
-        
-		<div class="block2">
-			<div class="block2-pic hov-img0">
-				<img src="https://static.independent.co.uk/2020/09/21/17/samsung%20monitor%20.jpg" alt="IMG-PRODUCT">
-
-			</div>
-
-			<div class="block2-txt flex-w flex-t p-t-14" style="padding-left:20px;">
-				<div class="block2-txt-child1 flex-col-l ">
-					<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-						<h5 class="justify-content-center d-flex">Samsung Monitor</h5>
-						
-					</a>
-
-
-					<a class="reviews" style="width: 100%; text-align:center;padding:20px 0px;" data-revoo-action=""reviews
-					href="https://mark.reevoo.com/reevoomark/en-GB/product?sku=870070&trkref=EBU">
-				<span style="color: rgb(255, 170, 0); margin-right:10px;"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-thin fa-star-half"></i></span>
-				 111 reviews</a>
-
-			
-					<ul>
-						<li>1920 x 1080 Full HD</li>
-						<li>HDMI & VGA</li>
-						<li>60Hz / 5ms Response Time</li>
-						<li>Panel Type: TN</li>
-						<li>Wall Mountable</li>
-					</ul>
-
-					<span class="stext-105 cl3" style="width: 100%; text-align:center;padding:20px 0px;font-weight: bold; font-size:20px;">
-						$16.64
-					</span>
-                    
-                    <div style="width:100%;text-align:center;">
-					<div class="grid-item__buttons"><button  style="background-color: green;padding:7px; margin-right:7px;color:#fff;border-radius:10px;" class="button button--mini-basket button--small js-add-to-mini-basket" data-product-id="870070" data-ajax-basket-url="product.html" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="Add to Basket Button">Add to Basket</button>	
-						<a class="button button--secondary button--small" style="background-color: rgb(11, 161, 230);padding:8px;color:#fff;border-radius:10px;" href="file:///C:/Users/preet/Desktop/cozastore-master/product.html" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="More Info Button">More Info</a>
-					</div>
-
-					
-	
-					</div>
-				
-
-
-
-				</div>
-			</div>
-		</div>
 	</div>
+	{% endfor %}
 
-
-	<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women" style="padding-bottom:30px;">
-		
-        
-		<div class="block2">
-			<div class="block2-pic hov-img0">
-				<img src="https://static.independent.co.uk/2020/09/21/17/samsung%20monitor%20.jpg" alt="IMG-PRODUCT">
-
-			</div>
-
-			<div class="block2-txt flex-w flex-t p-t-14" style="padding-left:20px;">
-				<div class="block2-txt-child1 flex-col-l ">
-					<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-						<h5 class="justify-content-center d-flex">Samsung Monitor</h5>
-						
-					</a>
-
-
-					<a class="reviews" style="width: 100%; text-align:center;padding:20px 0px;" data-revoo-action=""reviews
-					href="https://mark.reevoo.com/reevoomark/en-GB/product?sku=870070&trkref=EBU">
-				<span style="color: rgb(255, 170, 0); margin-right:10px;"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-thin fa-star-half"></i></span>
-				 111 reviews</a>
-
-			
-					<ul>
-						<li>1920 x 1080 Full HD</li>
-						<li>HDMI & VGA</li>
-						<li>60Hz / 5ms Response Time</li>
-						<li>Panel Type: TN</li>
-						<li>Wall Mountable</li>
-					</ul>
-
-					<span class="stext-105 cl3" style="width: 100%; text-align:center;padding:20px 0px;font-weight: bold; font-size:20px;">
-						$16.64
-					</span>
-                    
-                    <div style="width:100%;text-align:center;">
-					<div class="grid-item__buttons"><button  style="background-color: green;padding:7px; margin-right:7px;color:#fff;border-radius:10px;" class="button button--mini-basket button--small js-add-to-mini-basket" data-product-id="870070" data-ajax-basket-url="product.html" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="Add to Basket Button">Add to Basket</button>	
-						<a class="button button--secondary button--small" style="background-color: rgb(11, 161, 230);padding:8px;color:#fff;border-radius:10px;" href="file:///C:/Users/preet/Desktop/cozastore-master/product.html" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="More Info Button">More Info</a>
-					</div>
-
-					
-	
-					</div>
-				
-
-
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women" style="padding-bottom:30px;">
-		
-        
-		<div class="block2">
-			<div class="block2-pic hov-img0">
-				<img src="https://static.independent.co.uk/2020/09/21/17/samsung%20monitor%20.jpg" alt="IMG-PRODUCT">
-
-			</div>
-
-			<div class="block2-txt flex-w flex-t p-t-14" style="padding-left:20px;">
-				<div class="block2-txt-child1 flex-col-l ">
-					<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-						<h5 class="justify-content-center d-flex">Samsung Monitor</h5>
-						
-					</a>
-
-
-					<a class="reviews" style="width: 100%; text-align:center;padding:20px 0px;" data-revoo-action=""reviews
-					href="https://mark.reevoo.com/reevoomark/en-GB/product?sku=870070&trkref=EBU">
-				<span style="color: rgb(255, 170, 0); margin-right:10px;"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-thin fa-star-half"></i></span>
-				 111 reviews</a>
-
-			
-					<ul>
-						<li>1920 x 1080 Full HD</li>
-						<li>HDMI & VGA</li>
-						<li>60Hz / 5ms Response Time</li>
-						<li>Panel Type: TN</li>
-						<li>Wall Mountable</li>
-					</ul>
-
-					<span class="stext-105 cl3" style="width: 100%; text-align:center;padding:20px 0px;font-weight: bold; font-size:20px;">
-						$16.64
-					</span>
-                    
-                    <div style="width:100%;text-align:center;">
-					<div class="grid-item__buttons"><button  style="background-color: green;padding:7px; margin-right:7px;color:#fff;border-radius:10px;" class="button button--mini-basket button--small js-add-to-mini-basket" data-product-id="870070" data-ajax-basket-url="product.html" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="Add to Basket Button">Add to Basket</button>	
-						<a class="button button--secondary button--small" style="background-color: rgb(11, 161, 230);padding:8px;color:#fff;border-radius:10px;" href="file:///C:/Users/preet/Desktop/cozastore-master/product.html" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="More Info Button">More Info</a>
-					</div>
-
-					
-	
-					</div>
-				
-
-
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-	<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women" style="padding-bottom:30px;">
-		
-        
-		<div class="block2">
-			<div class="block2-pic hov-img0">
-				<img src="https://static.independent.co.uk/2020/09/21/17/samsung%20monitor%20.jpg" alt="IMG-PRODUCT">
-
-			</div>
-
-			<div class="block2-txt flex-w flex-t p-t-14" style="padding-left:20px;">
-				<div class="block2-txt-child1 flex-col-l ">
-					<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-						<h5 class="justify-content-center d-flex">Samsung Monitor</h5>
-						
-					</a>
-
-
-					<a class="reviews" style="width: 100%; text-align:center;padding:20px 0px;" data-revoo-action=""reviews
-					href="https://mark.reevoo.com/reevoomark/en-GB/product?sku=870070&trkref=EBU">
-				<span style="color: rgb(255, 170, 0); margin-right:10px;"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-thin fa-star-half"></i></span>
-				 111 reviews</a>
-
-			
-					<ul>
-						<li>1920 x 1080 Full HD</li>
-						<li>HDMI & VGA</li>
-						<li>60Hz / 5ms Response Time</li>
-						<li>Panel Type: TN</li>
-						<li>Wall Mountable</li>
-					</ul>
-
-					<span class="stext-105 cl3" style="width: 100%; text-align:center;padding:20px 0px;font-weight: bold; font-size:20px;">
-						$16.64
-					</span>
-                    
-                    <div style="width:100%;text-align:center;">
-					<div class="grid-item__buttons"><button  style="background-color: green;padding:7px; margin-right:7px;color:#fff;border-radius:10px;" class="button button--mini-basket button--small js-add-to-mini-basket" data-product-id="870070" data-ajax-basket-url="product.html" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="Add to Basket Button">Add to Basket</button>	
-						<a class="button button--secondary button--small" style="background-color: rgb(11, 161, 230);padding:8px;color:#fff;border-radius:10px;" href="file:///C:/Users/preet/Desktop/cozastore-master/product.html" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="More Info Button">More Info</a>
-					</div>
-
-					
-	
-					</div>
-				
-
-
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-	<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women" style="padding-bottom:30px;">
-		
-        
-		<div class="block2">
-			<div class="block2-pic hov-img0">
-				<img src="https://static.independent.co.uk/2020/09/21/17/samsung%20monitor%20.jpg" alt="IMG-PRODUCT">
-
-			</div>
-
-			<div class="block2-txt flex-w flex-t p-t-14" style="padding-left:20px;">
-				<div class="block2-txt-child1 flex-col-l ">
-					<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-						<h5 class="justify-content-center d-flex">Samsung Monitor</h5>
-						
-					</a>
-
-
-					<a class="reviews" style="width: 100%; text-align:center;padding:20px 0px;" data-revoo-action=""reviews
-					href="https://mark.reevoo.com/reevoomark/en-GB/product?sku=870070&trkref=EBU">
-				<span style="color: rgb(255, 170, 0); margin-right:10px;"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-thin fa-star-half"></i></span>
-				 111 reviews</a>
-
-			
-					<ul>
-						<li>1920 x 1080 Full HD</li>
-						<li>HDMI & VGA</li>
-						<li>60Hz / 5ms Response Time</li>
-						<li>Panel Type: TN</li>
-						<li>Wall Mountable</li>
-					</ul>
-
-					<span class="stext-105 cl3" style="width: 100%; text-align:center;padding:20px 0px;font-weight: bold; font-size:20px;">
-						$16.64
-					</span>
-                    
-                    <div style="width:100%;text-align:center;">
-					<div class="grid-item__buttons"><button  style="background-color: green;padding:7px; margin-right:7px;color:#fff;border-radius:10px;" class="button button--mini-basket button--small js-add-to-mini-basket" data-product-id="870070" data-ajax-basket-url="product.html" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="Add to Basket Button">Add to Basket</button>	
-						<a class="button button--secondary button--small" style="background-color: rgb(11, 161, 230);padding:8px;color:#fff;border-radius:10px;" href="file:///C:/Users/preet/Desktop/cozastore-master/product.html" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="More Info Button">More Info</a>
-					</div>
-
-					
-	
-					</div>
-				
-
-
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-	<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women" style="padding-bottom:30px;">
-		
-        
-		<div class="block2">
-			<div class="block2-pic hov-img0">
-				<img src="https://static.independent.co.uk/2020/09/21/17/samsung%20monitor%20.jpg" alt="IMG-PRODUCT">
-
-			</div>
-
-			<div class="block2-txt flex-w flex-t p-t-14" style="padding-left:20px;">
-				<div class="block2-txt-child1 flex-col-l ">
-					<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-						<h5 class="justify-content-center d-flex">Samsung Monitor</h5>
-						
-					</a>
-
-
-					<a class="reviews" style="width: 100%; text-align:center;padding:20px 0px;" data-revoo-action=""reviews
-					href="https://mark.reevoo.com/reevoomark/en-GB/product?sku=870070&trkref=EBU">
-				<span style="color: rgb(255, 170, 0); margin-right:10px;"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-thin fa-star-half"></i></span>
-				 111 reviews</a>
-
-			
-					<ul>
-						<li>1920 x 1080 Full HD</li>
-						<li>HDMI & VGA</li>
-						<li>60Hz / 5ms Response Time</li>
-						<li>Panel Type: TN</li>
-						<li>Wall Mountable</li>
-					</ul>
-
-					<span class="stext-105 cl3" style="width: 100%; text-align:center;padding:20px 0px;font-weight: bold; font-size:20px;">
-						$16.64
-					</span>
-                    
-                    <div style="width:100%;text-align:center;">
-					<div class="grid-item__buttons"><button  style="background-color: green;padding:7px; margin-right:7px;color:#fff;border-radius:10px;" class="button button--mini-basket button--small js-add-to-mini-basket" data-product-id="870070" data-ajax-basket-url="product.html" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="Add to Basket Button">Add to Basket</button>	
-						<a class="button button--secondary button--small" style="background-color: rgb(11, 161, 230);padding:8px;color:#fff;border-radius:10px;" href="file:///C:/Users/preet/Desktop/cozastore-master/product.html" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="More Info Button">More Info</a>
-					</div>
-
-					
-	
-					</div>
-				
-
-
-
-				</div>
-			</div>
-		</div>
-	</div>
 
 
 
 	
-
-
-	
-
-	
-
 
 
 
@@ -647,6 +283,7 @@
 
 </div>
 </div>
+
 </div> 
 
 
