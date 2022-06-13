@@ -308,6 +308,15 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   background-color: #fff;
 }
 
+a.category-badge > span.badge:hover {
+  background: #212529 !important;
+  color: #fff !important;
+  
+}
+a.category-badge > span.badge{
+  color: #000;
+}
+
 
 /*---------------------------------------------*/
 .limiter-menu-desktop {
@@ -769,6 +778,8 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   width: 100%;
   background-color: white;
   display: none;
+  position: fixed;
+  z-index: 2;
 }
 .btn-black{
   color: #fff;
@@ -810,8 +821,9 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   position: absolute;
   right: 10px;
   top: 2px;
-  padding: 10px;
+  padding: 5px;
   cursor: pointer;
+  background-color: #ff0000;
 }
 
 .arrow-main-menu-m i {
@@ -833,7 +845,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*---------------------------------------------*/
 .sub-menu-m {
   background-color: #fff;
-  padding: 10px 15px 10px 32px;
+  padding: 10px 1px 10px 32px;
   display: none;
 }
 
@@ -1327,6 +1339,10 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 .prev-slick1 {
   left: 50px;
   right: auto;
+}
+.tags:hover{
+  text-decoration: underline;
+  
 }
 
 @media (max-width: 991px) {
@@ -2698,7 +2714,10 @@ input.num-product::-webkit-inner-spin-button {
 .bg2 {background-color: #e6e6e6;}
 .bg3 {background-color: #222;}
 .bg5 {background-color: rgba(0,0,0,0.5);}
-.bg6 {background-color: #f2f2f2;}
+.bg6 {background-color: #f2f2f2;
+  justify-content: center;
+
+}
 .bg7 {background-color: #333;}
 .bg8 {background-color: #f3f3f3;}
 .bg9 {background-color: rgba(255,255,255,0.9);}

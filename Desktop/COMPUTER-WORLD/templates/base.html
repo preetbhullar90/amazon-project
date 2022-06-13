@@ -98,26 +98,28 @@
                     <div class="menu-desktop">
                         <ul class="main-menu">
                             <li class="active-menu">
-                                <a href="{% url 'home' %}">Home</a>
+                                <a href="{% url 'home' %}">ALL PRODUCTS</a>
                                 <ul class="sub-menu">
-                                    <li><a href="index.html">Homepage 1</a></li>
-                                    <li><a href="home-02.html">Homepage 2</a></li>
-                                    <li><a href="home-03.html">Homepage 3</a></li>
+                                    <li><a href="{% url 'products' %}?sort=price&direction=asc">By Price</a></li>
+                                    <li><a href="{% url 'products' %}?sort=rating&direction=desc">By Rating</a></li>
+                                    <li><a href="{% url 'products' %}?sort=category&direction=asc">By Category</a></li>
+                                    <li><a href="{% url 'products' %}">All Products</a></li>
                                 </ul>
                             </li>
 
                             <li>
-                                <a href="{% url 'products' %}">ALL PRODUCTS</a>
+                                <a href="{% url 'products' %}">COMPUTING</a>
                                 <ul class="sub-menu">
-                                    <li><a href="{% url 'products' %}?category=pc">PC</a></li>
-                                    <li><a href="{% url 'products' %}?category=components">COMPONENTS</a></li>
-                                    <li><a href="{% url 'products' %}?category=laptops">LAPTOPS</a></li>
-                                    <li><a href="{% url 'products' %}?category=monitors">MONITORS</a></li>
+                                    <li><a href="{% url 'products' %}?category=pc">Pc</a></li>
+                                    <li><a href="{% url 'products' %}?category=components">Components</a></li>
+                                    <li><a href="{% url 'products' %}?category=laptops">Laptops</a></li>
+                                    <li><a href="{% url 'products' %}?category=monitors">Monitors</a></li>
+                                    <li><a href="{% url 'products' %}?category=pc,components,laptops,monitors">All computing</a></li>
                                 </ul>
                             </li>
 
                             <li class="label1" data-label1="hot">
-                                <a href="s{% url 'products' %}?category=deals">DEALS</a>
+                                <a href="{% url 'products' %}?category=deals">DEALS</a>
                             </li>
 
 

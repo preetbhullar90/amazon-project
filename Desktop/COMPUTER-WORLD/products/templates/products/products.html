@@ -195,9 +195,17 @@
 
 <div class="container-fluid">
 	<div class="row">
-		<div class="col text-center" style="margin-top:10rem;">
+		<div class="col text-center" style="margin-top:7rem;">
 			<h2 class="logo-font">PRODUCTS</h2>
+
+            {% for c in current_categories %}
+            <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
+                <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
+            </a>
+        {% endfor %}
 			</div>
+
+           
 		</div>
 	</div>
 
@@ -205,10 +213,187 @@
 
 
 <div class="bg0 m-t-23 p-b-140">
-	
-	<div class="container">	
-	
-		<div class="row isotope-grid" style="margin-top:1rem;">
+
+    <div class="container">	
+
+
+        <div class="flex-w flex-sb-m p-b-52 ">
+          
+            <div class="flex-w flex-c-m m-tb-10">
+                <div class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
+                    <i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
+                    <i class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
+                     Filter
+                </div>
+
+             
+            </div>
+            
+           
+          
+            <!-- Filter -->
+
+
+            <!-- <div class="sort-select-wrapper w-50">
+                <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                    <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                    <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                    <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                    <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                    <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                    <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                    <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                    <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                    <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                </select>
+            </div> -->
+
+
+
+
+            <div class="dis-none panel-filter w-full p-t-10 ">
+                <div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm ">
+                    <div class="filter-col1 p-r-15 p-b-27">
+                        <div class="mtext-102 cl2 p-b-15">
+                            Sort By
+                        </div>
+
+                        <ul style="line-height:30px;">
+                            <li class="p-b-6">
+
+                                <a href="{% url 'products' %}?sort=price&direction=asc" class="filter-link stext-106 trans-04">
+                                    Price(low to high)  
+                                 </a>
+                                
+                                <!-- <a href="{% if current_sorting == 'price_asc' %}selected{% endif %}" class="filter-link stext-106 trans-04">
+                                   price  
+                                </a> -->
+                            </li>
+
+                            <li class="p-b-6">
+                                <a href="{% url 'products' %}?sort=price&direction=desc" class="filter-link stext-106 trans-04">
+                                    Price(high to low)
+                                </a>
+                            </li>
+
+                            <li class="p-b-6">
+                                <a href="{% url 'products' %}?sort=rating&direction=asc" class="filter-link stext-106 trans-04">
+                                    Rating(low to high) 
+                                </a>
+                            </li>
+
+                            <li class="p-b-6">
+                                <a href="{% url 'products' %}?sort=rating&direction=desc" class="filter-link stext-106 trans-04 filter-link-active">
+                                    Rating(high to low)
+                                </a>
+                            </li>
+
+                    
+                        </ul>
+                    </div>
+
+
+
+
+
+                    <div class="filter-col3 p-r-15 p-b-27">
+                        <div class="mtext-102 cl2 p-b-15">
+                            Category
+                        </div>
+
+                        <ul style="line-height:30px;">
+                            <li class="p-b-6">
+                                <span class="fs-15 lh-12 m-r-6" style="color: #222;">
+                                    <i class="zmdi zmdi-circle"></i>
+                                </span>
+
+                                <a href="{% url 'products' %}?sort=category&direction=asc" class="filter-link stext-106 trans-04">
+                                    Category (A-Z)
+                                </a>
+                            </li>
+
+                            <li class="p-b-6">
+                                <span class="fs-15 lh-12 m-r-6" style="color: #4272d7;">
+                                    <i class="zmdi zmdi-circle"></i>
+                                </span>
+
+                                <a href="{% url 'products' %}?sort=category&direction=desc" class="filter-link stext-106 trans-04 filter-link-active">
+                                    Category (Z-A)
+                                </a>
+                            </li>
+
+                            <li class="p-b-6">
+                                <span class="fs-15 lh-12 m-r-6" style="color: #b3b3b3;">
+                                    <i class="zmdi zmdi-circle"></i>
+                                </span>
+
+                                <a href="#" class="filter-link stext-106 trans-04">
+                                    Name (Z-A)
+                                </a>
+                            </li>
+
+                            <li class="p-b-6">
+                                <span class="fs-15 lh-12 m-r-6" style="color: #00ad5f;">
+                                    <i class="zmdi zmdi-circle"></i>
+                                </span>
+
+                                <a href="#" class="filter-link stext-106 trans-04">
+                                    Name (A-Z)
+                                </a>
+                            </li>
+
+                            
+
+                            
+                        </ul>
+                    </div>
+
+
+
+                  
+                   
+                    <div class="filter-col4 p-b-27">
+                        <div class="mtext-102 cl2 p-b-15">
+                            Tags
+                        </div>
+
+                        <div class="flex-w p-t-4 m-r--5">
+                            <a href="{% url 'products' %}" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
+                                ALL
+                            </a>
+
+                            <a href="{% url 'products' %}?category=pc" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
+                                Pc
+                            </a>
+
+                            <a href="{% url 'products' %}?category=components" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
+                                Components
+                            </a>
+
+                            <a href="{% url 'products' %}?category=laptops" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
+                                Laptops
+                            </a>
+
+                            <a href="{% url 'products' %}?category=monitors" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
+                                Monitors
+                            </a>
+                            <a href="{% url 'products' %}?category=deals" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
+                                Deals
+                            </a>
+                            <a href="{% url 'products' %}?category=clearance" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
+                                Clearance
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        
+        
+        <div class="row isotope-grid" style="margin-top:1rem;">
 			{% for product in products %}
 			<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women" style="padding-bottom:30px;">
 				
@@ -238,14 +423,24 @@
 					href="https://mark.reevoo.com/reevoomark/en-GB/product?sku=870070&trkref=EBU">
 				<span style="color: rgb(255, 170, 0); margin-right:10px;"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-thin fa-star-half"></i></span>
 				 111 reviews</a> -->
-				 <p class="reviews" style="width: 100%; text-align:center;padding:20px 0px;">
+				 <p style="width: 100%; text-align:center;">
+                    
 					 {% if product.rating %}
-					<span><i style="color: rgb(255, 170, 0); margin-right:10px;" class="fa fa-star"></i>{{ product.rating }} / 5</span>
+					<span><i style="color: rgb(255, 170, 0); margin-right:10px; padding-top:10px;" class="fa fa-star"></i>{{ product.rating }} / 5</span>
 					{% else %}
 					<small class="text-muted">No Rating</small>
 				{% endif %}
 				 </p>
+                 {% if product.category %}
+                 <p class="small mt-1 mb-0 tags" style="width: 100%; text-align:center;padding-bottom:20px;">
+                     <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                         <i class="fa fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                     </a>
+                 </p>
+                 {% endif %}
 
+
+                 
 					<ul>
 						<li>{{product.description }}</li>
 						
