@@ -107,22 +107,22 @@
                             </li>
 
                             <li>
-                                <a href="{% url 'products' %}">Categories</a>
+                                <a href="{% url 'products' %}">ALL PRODUCTS</a>
                                 <ul class="sub-menu">
-                                    <li><a href="index.html">Pc</a></li>
-                                    <li><a href="home-02.html">Components</a></li>
-                                    <li><a href="home-03.html">laptops</a></li>
-                                    <li><a href="home-03.html">Monitors</a></li>
+                                    <li><a href="{% url 'products' %}?category=pc">PC</a></li>
+                                    <li><a href="{% url 'products' %}?category=components">COMPONENTS</a></li>
+                                    <li><a href="{% url 'products' %}?category=laptops">LAPTOPS</a></li>
+                                    <li><a href="{% url 'products' %}?category=monitors">MONITORS</a></li>
                                 </ul>
                             </li>
 
                             <li class="label1" data-label1="hot">
-                                <a href="shoping-cart.html">Deals</a>
+                                <a href="s{% url 'products' %}?category=deals">DEALS</a>
                             </li>
 
 
                             <li>
-                                <a href="contact.html">Clearance</a>
+                                <a href="{% url 'products' %}?category=clearance">CLEARANCE</a>
                             </li>
                         </ul>
                         
@@ -130,7 +130,7 @@
 
                     <!-- Icon header -->
                     <div class="wrap-icon-header flex-w flex-r-m">
-                        <form method="GET" action="#" class="search-bar">
+                        <form method="GET" action="{% url 'products' %}" class="search-bar">
                             <div class="input-group w-100">
                                 <input class="form-control border border-black rounded-0 " type="text" name="q"
                                     placeholder="Search our site">

@@ -37,12 +37,12 @@
         </li>
 
         <li>
-            <a href="{% url 'products' %}">Categories</a>
+            <a href="{% url 'products' %}">ALL PRODUCTS</a>
             <ul class="sub-menu-m">
-                <li><a href="index.html">Pc</a></li>
-                <li><a href="home-02.html">Components</a></li>
-                <li><a href="home-03.html">Laptops</a></li>
-                <li><a href="home-03.html">Monitors</a></li>
+                <li><a href="{% url 'products' %}?category=pc">PC</a></li>
+                <li><a href="{% url 'products' %}?category=components">COMPONENTS</a></li>
+                <li><a href="{% url 'products' %}?category=laptops">LAPTOPS</a></li>
+                <li><a href="{% url 'products' %}?category=monitors">MONITORS</a></li>
             </ul>
             <span class="arrow-main-menu-m">
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -50,12 +50,12 @@
         </li>
 
         <li>
-            <a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
+            <a href="{% url 'products' %}?category=deals" class="label1 rs1" data-label1="hot">DEALS</a>
         </li>
 
 
         <li>
-            <a href="contact.html">Contact</a>
+            <a href="{% url 'products' %}?category=clearance">CLEARANCE</a>
         </li>
     </ul>
 </div>
