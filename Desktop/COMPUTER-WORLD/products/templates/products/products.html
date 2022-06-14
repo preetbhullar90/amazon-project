@@ -212,9 +212,23 @@
 
 
 
-<div class="bg0 m-t-23 p-b-140">
 
-    <div class="container">	
+    
+    
+    
+    
+    
+    <div class="bg0 m-t-23 p-b-140">
+        
+        <div class="container">	
+        <div class="col-12 col-md-6 order-md-first">
+            <p class="text-muted mt-3 text-center text-md-left">
+                {% if search_term or current_categories or current_sorting != 'None_None' %}
+                    <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
+                {% endif %}
+                {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+            </p>
+        </div>
 
 
         <div class="flex-w flex-sb-m p-b-52 ">
@@ -283,7 +297,7 @@
                             </li>
 
                             <li class="p-b-6">
-                                <a href="{% url 'products' %}?sort=rating&direction=desc" class="filter-link stext-106 trans-04 filter-link-active">
+                                <a href="{% url 'products' %}?sort=rating&direction=desc" class="filter-link stext-106 trans-04">
                                     Rating(high to low)
                                 </a>
                             </li>
@@ -303,42 +317,26 @@
 
                         <ul style="line-height:30px;">
                             <li class="p-b-6">
-                                <span class="fs-15 lh-12 m-r-6" style="color: #222;">
-                                    <i class="zmdi zmdi-circle"></i>
-                                </span>
-
-                                <a href="{% url 'products' %}?sort=category&direction=asc" class="filter-link stext-106 trans-04">
+                               <a href="{% url 'products' %}?sort=category&direction=asc" class="filter-link stext-106 trans-04 filter-link-active">
                                     Category (A-Z)
                                 </a>
                             </li>
 
                             <li class="p-b-6">
-                                <span class="fs-15 lh-12 m-r-6" style="color: #4272d7;">
-                                    <i class="zmdi zmdi-circle"></i>
-                                </span>
-
-                                <a href="{% url 'products' %}?sort=category&direction=desc" class="filter-link stext-106 trans-04 filter-link-active">
+                                <a href="{% url 'products' %}?sort=category&direction=desc" class="filter-link stext-106 trans-04">
                                     Category (Z-A)
                                 </a>
                             </li>
 
                             <li class="p-b-6">
-                                <span class="fs-15 lh-12 m-r-6" style="color: #b3b3b3;">
-                                    <i class="zmdi zmdi-circle"></i>
-                                </span>
-
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    Name (Z-A)
+                                <a href="{% url 'products' %}?sort=name&direction=asc" class="filter-link stext-106 trans-04">
+                                    Name (A-Z)
                                 </a>
                             </li>
 
                             <li class="p-b-6">
-                                <span class="fs-15 lh-12 m-r-6" style="color: #00ad5f;">
-                                    <i class="zmdi zmdi-circle"></i>
-                                </span>
-
-                                <a href="#" class="filter-link stext-106 trans-04">
-                                    Name (A-Z)
+                                <a href="{% url 'products' %}?sort=name&direction=desc" class="filter-link stext-106 trans-04">
+                                    Name (Z-A)
                                 </a>
                             </li>
 
@@ -394,7 +392,9 @@
         
         
         <div class="row isotope-grid" style="margin-top:1rem;">
-			{% for product in products %}
+           
+            
+            {% for product in products %}
 			<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women" style="padding-bottom:30px;">
 				
 				
@@ -447,9 +447,14 @@
 						
 					</ul>
 
-					<span class="stext-105 cl3" style="width: 100%;display:block; text-align:center;padding:20px 0px;font-weight: bold; font-size:20px;">
+                   
+                    
+
+					<span class="stext-105 cl3 price-text" style="width: 100%;display:block; text-align:center;padding:20px 0px;font-weight: bold; font-size:20px;">
 						£{{product.price }}
 					</span>
+                    
+
                     
                     <div style="width:100%;text-align:center;">
 					<div class="grid-item__buttons"><button  style="background-color: green;padding:7px;color:#fff;border-radius:10px;" class="button button--mini-basket button--small js-add-to-mini-basket" data-product-id="870070" data-ajax-basket-url="product.html" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="Add to Basket Button">Add to Basket</button>	

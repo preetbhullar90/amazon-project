@@ -162,8 +162,8 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   height: 38px;
   bottom: 0px;
   right: 40px;
-  background-color: #717fe0;
-  opacity: 0.5;
+  background-color: #514d4d;
+  opacity: 01.5;
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -176,13 +176,13 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 .symbol-btn-back-to-top {
   font-size: 25px;
-  color: white;
+  color: #fff;
   line-height: 1em;
 }
 
 .btn-back-to-top:hover {
   opacity: 1;
-  background-color: #717fe0;
+  background-color: #000;
 }
 
 @media (max-width: 575px) {
@@ -485,8 +485,9 @@ a.category-badge > span.badge{
 }
 
 .sub-menu > li:hover > a {
-  color: #6c7ae0;
+  color: #000;
   text-decoration: none;
+  background-color: #f2f2f2;
 }
 
 @media (max-width: 1300px) {
@@ -770,6 +771,9 @@ a.category-badge > span.badge{
     justify-content: space-evenly;
   }
   .container-menu-desktop {display: none;}
+  .logo-font{
+    margin-top: 30px;
+  }
 }
 
 /*==================================================================
@@ -1806,8 +1810,8 @@ button.mfp-close {
 
 .show-search:hover:after,
 .show-filter:hover:after {
-  background-color: #717fe0;
-  border-color: #717fe0;
+  background-color: #000;
+  border-color: #000;
 }
 
 /*---------------------------------------------*/
@@ -1823,13 +1827,15 @@ button.mfp-close {
 }
 
 .filter-link:hover {
-  color: #6c7ae0;
-  border-bottom: 1px solid #6c7ae0;
+  color: #fff;
+  background-color: #393838;
+  padding: 3px 1px;
+  
 }
 
 .filter-link-active {
-  color: #6c7ae0;
-  border-bottom: 1px solid #6c7ae0;
+  color: #666666;
+  border-bottom: 1px solid #393838;
 }
 
 @media (max-width: 767px) {
@@ -2204,6 +2210,7 @@ input.num-product::-webkit-inner-spin-button {
 .cl10 {color: #1d1d1d;}
 .cl11 {color: #f9ba48;}
 .cl12 {color: #ccc;}
+.price-text{color: #ff0000;}
 
 /*//////////////////////////////////////////////////////////////////
 [ S-Text 0 - 15 ]*/
@@ -3168,8 +3175,8 @@ input.num-product::-webkit-inner-spin-button {
 
 /*---------------------------------------------*/
 .hov-btn3:hover {
-  border-color: #717fe0;
-  background-color: #717fe0;
+  border-color: #000;
+  background-color: #000;
   color: #fff;
 }
 
@@ -3179,8 +3186,8 @@ input.num-product::-webkit-inner-spin-button {
 
 /*---------------------------------------------*/
 .hov-tag1:hover {
-  color: #717fe0;
-  border-color: #717fe0;
+  color: #fff;
+  background-color: #000;
 }
 
 
