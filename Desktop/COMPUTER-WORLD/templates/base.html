@@ -79,7 +79,7 @@
             <div class="top-bar ">
                 <div class="content-topbar flex-sb-m h-full container">
                     <div class="left-top-bar">
-                        Free shipping for standard order over ${{free_shipping_threshold}}
+                        Free shipping for standard order over ${{free_delivery_threshold}}
                     </div>
                 </div>
             </div>
@@ -175,7 +175,7 @@
                             </li>
                             <li class="list-inline-item">
                                 <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
-                                    href="#">
+                                    href="{% url 'view_bag' %}">
                                     <div class="text-center">
                                         <div><i class="fa fa-shopping-cart fa-lg"></i></div>
                                         <p class="my-0">
