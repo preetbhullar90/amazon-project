@@ -286,10 +286,29 @@
 								
 								
 								<form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+									{% with product.has_sizes as 24 %}
+										{% if 24 %}
+									   
+										   <div>
+											   <p><strong>Size:</strong></p>
+											   <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
+												   <option value="24">24</option>
+												   <option value="28">28</option>
+												   <option value="28" selected>28</option>
+												   <option value="32">32</option>
+												   <option value="42">42</option>
+											   </select>
+										   </div>
+										   {% endif %}
 									
-									<div class="size-204 flex-w flex-m respon6-next">
-										
-									{% csrf_token %}
+										   <p class="mt-3"><strong>Quantity:</strong></p>
+										   <div class="size-204 flex-w flex-m respon6-next">
+											   
+											   {% csrf_token %}
+
+
+									
+										  
 			
 									<div class="wrap-num-product flex-w m-r-20 m-tb-10">
 
@@ -308,7 +327,7 @@
 									
 								
 									<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-										Add to cart
+										Add to Basket
 									</button>
 
 									
@@ -319,30 +338,17 @@
 
 
 
+
+
+
+
+
+
+
+
 										
-
-
-
-
-
-
-
-										{% with product.has_sizes as 28 %}
-										{% if 28 %}
 									   
-										   <div class="col-12">
-											   <p><strong>Size:</strong></p>
-											   <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
-												   <option value="24">24</option>
-												   <option value="28">28</option>
-												   <option value="28" selected>28</option>
-												   <option value="32">32</option>
-												   <option value="42">42</option>
-											   </select>
-										   </div>
-										   {% endif %}
-									   
-									   {% endwith %}
+									  
 
 
 
@@ -370,6 +376,7 @@
 									
 								</div>
 								
+								{% endwith %}
 								
 								
 								</form>
