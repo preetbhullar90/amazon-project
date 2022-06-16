@@ -184,6 +184,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   opacity: 1;
   background-color: #000;
 }
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 
 @media (max-width: 575px) {
   .btn-back-to-top {
