@@ -15,6 +15,8 @@
     {% endblock %}
 
     {% block corecss %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="{% static 'images/icons/favicon.png'%}">
     <!--===============================================================================================-->
@@ -193,41 +195,6 @@
 
 
 
-
-
-
-    
-                        {% if messages %}
-  
-   
-                        <div class="message-container">
-                            {% for message in messages %}
-                                {% with message.level as level %}
-                                    {% if level == 40 %}
-                                        {% include 'includes/toasts/toast_error.html' %}
-                                    {% elif level == 30 %}
-                                        {% include 'includes/toasts/toast_warning.html' %}
-                                    {% elif level == 25 %}
-                                        {% include 'includes/toasts/toast_success.html' %}
-                                    {% else %}
-                                        {% include 'includes/toasts/toast_info.html' %}
-                                    {% endif %}
-                                {% endwith %}
-                            {% endfor %}
-                        </div>
-                    
-                    
-                    {% endif %}
-                
-
-
-
-
-
-
-
-
-
                     </div>
                     
                     
@@ -247,8 +214,7 @@
             
         </div>
       
-        
-        
+   
 
         {% include 'includes/main-nav.html'%}
         {% include 'includes/mobile-top-header.html'%}
@@ -257,12 +223,36 @@
             <span class="symbol-btn-back-to-top">
                 <i class="zmdi zmdi-chevron-up"></i>
             </span>
-        </div>
-
-
-
-       
+        </div>  
     </header>
+
+
+
+    {% if messages %}
+   <div>
+    <div class="limiter-menu-desktop container">
+    
+    <div class="message-container wrap-icon-header flex-w flex-r-m">
+        {% for message in messages %}
+            {% with message.level as level %}
+                {% if level == 40 %}
+                    {% include 'includes/toasts/toast_error.html' %}
+                {% elif level == 30 %}
+                    {% include 'includes/toasts/toast_warning.html' %}
+                {% elif level == 25 %}
+                    {% include 'includes/toasts/toast_success.html' %}
+                {% else %}
+                    {% include 'includes/toasts/toast_info.html' %}
+                {% endif %}
+            {% endwith %}
+        {% endfor %}
+    </div>
+</div>
+</div>
+
+
+
+{% endif %}
 
 
 
