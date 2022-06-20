@@ -127,7 +127,7 @@
                                 <td colspan="5" class="text-right">
                                     <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg keep-shopping-text">
                                         <span class="icons">
-                                            <i class="fa fa-chevron-left"></i>
+                                            <i class="fa fa-chevron-left keep-shopping-text"></i>
                                         </span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
@@ -143,11 +143,11 @@
                     </div>
                 {% else %}
                     <p class="lead mb-5">Your bag is empty.</p>
-                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                        <span class="icons">
+                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg keep-shopping-text">
+                        <span class="icons ">
                             <i class="fa fa-chevron-left"></i>
                         </span>
-                        <span class="text-uppercase">Keep Shopping</span>
+                        <span class="text-uppercase ">Keep Shopping</span>
                     </a>
                 {% endif %}
             </div>
