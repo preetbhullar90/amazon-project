@@ -212,7 +212,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 [ Header Desktop ]*/
 
-.container-menu-desktop {
+.container-menu-desktop{
   height: auto;
   width: 100%;
   position: relative;
@@ -220,6 +220,10 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   -o-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
+  position:fixed;
+  background-color: #fff;
+  box-shadow:0 0 10px 0 #333333;
+  z-index: 999;
 }
 
 .header-v2 .container-menu-desktop {
@@ -291,7 +295,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*==================================================================
 [ Menu ]*/
 
-.wrap-menu-desktop {
+/* .wrap-menu-desktop {
   position: fixed;
   z-index: 1100;
   background-color: transparent;
@@ -304,7 +308,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   -o-transition: height 0.3s, background-color 0.3s;
   -moz-transition: height 0.3s, background-color 0.3s;
   transition: height 0.3s, background-color 0.3s;
-}
+} */
 
 .header-v2 .wrap-menu-desktop {
   background-color: #fff;
@@ -359,8 +363,8 @@ a.category-badge > span.badge{
 }
 
 .logo img {
-  max-width: 60%;
-  max-height: 60%;
+  max-width: 30%;
+  max-height: 30%;
   padding-left: 5px;
 }
 .logo-text{
@@ -527,7 +531,8 @@ a.category-badge > span.badge{
 
 }
 .search-bar{
-  width: 60%;
+  width: 51%;
+  max-width: 600px;
 
 }
 .search-basket{
@@ -553,6 +558,7 @@ a.category-badge > span.badge{
 .keep-shopping-text{
   border: 1px solid #000;
   color: #000;
+  margin-bottom: 5px;
 }
 
 .keep-shopping-text:hover{
@@ -709,6 +715,7 @@ a.category-badge > span.badge{
 [ Fixed menu desktop ]*/
 
 .fix-menu-desktop .wrap-menu-desktop {
+  
   height: 70px;
   background-color: rgba(255,255,255,1);
   box-shadow: 0 0px 3px 0px rgba(0,0,0,0.2);
@@ -716,6 +723,7 @@ a.category-badge > span.badge{
   -webkit-box-shadow: 0 0px 3px 0px rgba(0,0,0,0.2);
   -o-box-shadow: 0 0px 3px 0px rgba(0,0,0,0.2);
   -ms-box-shadow: 0 0px 3px 0px rgba(0,0,0,0.2);
+  
 }
 
 .header-v2 .fix-menu-desktop.container-menu-desktop {
@@ -725,6 +733,7 @@ a.category-badge > span.badge{
 .header-v3 .fix-menu-desktop .wrap-menu-desktop {
   background-color: #222;
   border-color: #222;
+  
 }
 
 .header-v4 .fix-menu-desktop.container-menu-desktop {
@@ -822,6 +831,7 @@ a.category-badge > span.badge{
   .message-container{
     top: 76px;
   }
+ 
  
 }
 
@@ -925,6 +935,12 @@ a.category-badge > span.badge{
   .message-container{
     top: 76px;
   }
+  .float-remove-button{
+    float: right;
+  }
+  .table-width{
+    width: 25%;
+  }
 }
 
 
@@ -983,6 +999,12 @@ a.category-badge > span.badge{
   }
   .message-container{
     top: 76px;
+  }
+  .float-remove-button{
+    float: right;
+  }
+  .table-width{
+    width: 25%;
   }
 }
 
@@ -1186,6 +1208,10 @@ a.category-badge > span.badge{
   .message-container{
     top: 76px;
   }
+
+  .table-width{
+    width: 45%;
+  }
   
 }
 
@@ -1359,6 +1385,9 @@ a.category-badge > span.badge{
   .item-slick1 {
     height: calc(40vh - 70px) !important;
   }
+  .table-width{
+    width: 25%;
+  }
 }
 
 
@@ -1505,6 +1534,9 @@ a.category-badge > span.badge{
 
   .wrap-slick1-dots {
     bottom: 25px;
+  }
+  .table-width{
+    width: 45%;
   }
 }
 
