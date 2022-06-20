@@ -83,7 +83,7 @@
 
             <div class="wrap-menu-desktop ">
 
-                <nav class="limiter-menu-desktop container ">
+                <nav class="limiter-menu-desktop containers">
                     <!-- Logo desktop -->
                     <a href="{% url 'home' %}" class="logo">
                         <h3 class="logo-text">COMPUTER</h3>
@@ -230,7 +230,7 @@
 
     {% if messages %}
    <div>
-    <div class="limiter-menu-desktop container">
+    <div class="limiter-menu-desktop  container-fluid fixed-top " >
     
     <div class="message-container wrap-icon-header flex-w flex-r-m">
         {% for message in messages %}

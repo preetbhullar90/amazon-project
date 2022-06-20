@@ -105,6 +105,10 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 [ Bootstrap ]*/
 .container {max-width: 1380px;
 }
+.containers {max-width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
 @media (max-width: 1600px) {
   .container {max-width: 1200px;}
@@ -195,6 +199,9 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   .btn-back-to-top {
     bottom: 0px;
     right: 15px;
+  }
+  .message-container{
+    top: 76px;
   }
 }
 
@@ -674,6 +681,9 @@ a.category-badge > span.badge{
   .wrap-search-header {
     height: 90px;
   }
+  .message-container{
+    top: 76px;
+  }
 }
 
 @media (max-width: 575px) {
@@ -688,6 +698,9 @@ a.category-badge > span.badge{
 
   .wrap-search-header {
     height: 80px;
+  }
+  .message-container{
+    top: 76px;
   }
 }
 
@@ -806,6 +819,10 @@ a.category-badge > span.badge{
   .logo-font{
     margin-top: 30px;
   }
+  .message-container{
+    top: 76px;
+  }
+ 
 }
 
 /*==================================================================
@@ -821,6 +838,9 @@ a.category-badge > span.badge{
   color: #fff;
   background-color: #000;
   
+}
+.btn:hover{
+  color: #fff;
 }
 
 
@@ -902,6 +922,9 @@ a.category-badge > span.badge{
   .menu-mobile {
     display: none;
   }
+  .message-container{
+    top: 76px;
+  }
 }
 
 
@@ -957,6 +980,9 @@ a.category-badge > span.badge{
 @media (max-width: 991px) {
   .wrap-sidebar {
     display: none;
+  }
+  .message-container{
+    top: 76px;
   }
 }
 
@@ -1157,6 +1183,10 @@ a.category-badge > span.badge{
   .header-cart-title {
     padding-bottom: 35px;
   }
+  .message-container{
+    top: 76px;
+  }
+  
 }
 
 
@@ -1801,8 +1831,8 @@ button.mfp-close {
 /* ------------------------------- bootstrap toasts */
 
 .message-container {
-  position: relative;
-  top: 72px;
+  position: absolute;
+  top: 111px;
   right: 15px;
   z-index: 99999999999;
   margin-left: 10px;
@@ -1815,6 +1845,7 @@ button.mfp-close {
 .toast-capper {
   height: 2px;
 }
+
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
@@ -3422,6 +3453,9 @@ input.num-product::-webkit-inner-spin-button {
     font-size: 40px;
     
   }
+  .message-container{
+    top: 76px;
+  }
 }
 
 
@@ -3545,5 +3579,24 @@ input.num-product::-webkit-inner-spin-button {
   .product-top-name{
     padding-top: 10px;
   }
+
+
+
+
+.table thead th{
+  display: none;
+}
+.py-3>p{
+  display: none;
+}
+.fa-minus::before{
+  display: none;
+}
+.input-group-prepend,.input-group-append{
+  display: none;
+}
+.message-container{
+  top: 76px;
+}
 
 }
