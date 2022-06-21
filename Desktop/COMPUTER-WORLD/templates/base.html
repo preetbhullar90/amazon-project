@@ -15,7 +15,8 @@
     {% endblock %}
 
     {% block corecss %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="{% static 'images/icons/favicon.png'%}">
@@ -54,12 +55,17 @@
     {% endblock %}
 
     {% block corejs %}
-        <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
     {% endblock %}
-    
+
 
     {% block extra_js %}
     {% endblock %}
@@ -88,7 +94,7 @@
                     <a href="{% url 'home' %}" class="logo">
                         <h3 class="logo-text">COMPUTER</h3>
                         <img src="{% static 'images/icons/website-logo.svg'%}" alt="IMG-LOGO">
-                        
+
                     </a>
 
                     <!-- Menu desktop -->
@@ -111,7 +117,8 @@
                                     <li><a href="{% url 'products' %}?category=components">Components</a></li>
                                     <li><a href="{% url 'products' %}?category=laptops">Laptops</a></li>
                                     <li><a href="{% url 'products' %}?category=monitors">Monitors</a></li>
-                                    <li><a href="{% url 'products' %}?category=pc,components,laptops,monitors">All computing</a></li>
+                                    <li><a href="{% url 'products' %}?category=pc,components,laptops,monitors">All
+                                            computing</a></li>
                                 </ul>
                             </li>
 
@@ -124,7 +131,7 @@
                                 <a href="{% url 'products' %}?category=clearance">CLEARANCE</a>
                             </li>
                         </ul>
-                        
+
                     </div>
 
                     <!-- Icon header -->
@@ -143,12 +150,12 @@
                                 </div>
                             </div>
                         </form>
-                    
+
                         <ul class="list-inline list-unstyled text-center text-lg-right my-0 main-menu">
 
 
 
-                            
+
                             <li class="list-inline-item dropdown">
                                 <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
@@ -196,25 +203,25 @@
 
 
                     </div>
-                    
-                    
-                    
-                    
-                </div>
-                
 
 
-            
-
-        
 
 
-            </nav>
-            
-            
+                </nav>
+            </div>
+
+
+
+
+
+
+
+
+
+
         </div>
-      
-   
+
+
 
         {% include 'includes/main-nav.html'%}
         {% include 'includes/mobile-top-header.html'%}
@@ -223,40 +230,40 @@
             <span class="symbol-btn-back-to-top">
                 <i class="zmdi zmdi-chevron-up"></i>
             </span>
-        </div>  
+        </div>
     </header>
 
 
 
     {% if messages %}
-   <div>
-    <div class="limiter-menu-desktop  container-fluid fixed-top " >
-    
-    <div class="message-container wrap-icon-header flex-w flex-r-m">
-        {% for message in messages %}
-            {% with message.level as level %}
+    <div>
+        <div class="limiter-menu-desktop  container-fluid fixed-top ">
+
+            <div class="message-container wrap-icon-header flex-w flex-r-m">
+                {% for message in messages %}
+                {% with message.level as level %}
                 {% if level == 40 %}
-                    {% include 'includes/toasts/toast_error.html' %}
+                {% include 'includes/toasts/toast_error.html' %}
                 {% elif level == 30 %}
-                    {% include 'includes/toasts/toast_warning.html' %}
+                {% include 'includes/toasts/toast_warning.html' %}
                 {% elif level == 25 %}
-                    {% include 'includes/toasts/toast_success.html' %}
+                {% include 'includes/toasts/toast_success.html' %}
                 {% else %}
-                    {% include 'includes/toasts/toast_info.html' %}
+                {% include 'includes/toasts/toast_info.html' %}
                 {% endif %}
-            {% endwith %}
-        {% endfor %}
+                {% endwith %}
+                {% endfor %}
+            </div>
+        </div>
     </div>
-</div>
-</div>
 
 
 
-{% endif %}
+    {% endif %}
 
 
 
-  
+
 
 
 
@@ -278,14 +285,14 @@
 
 
 
-
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js'%}"></script>
     <!--===============================================================================================-->
     <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js'%}"></script>
     <!--===============================================================================================-->
     <script src="{% static 'vendor/animsition/js/animsition.min.js'%}"></script>
     <!--===============================================================================================-->
     <script src="{% static 'vendor/bootstrap/js/popper.js'%}"></script>
-    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js'%}"></script>
+    
     <!--===============================================================================================-->
     <script src="{% static 'vendor/select2/select2.min.js'%}"></script>
     <script>

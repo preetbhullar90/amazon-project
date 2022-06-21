@@ -66,7 +66,7 @@
 
 
 
-                                    <td class="py-3 table-width">
+                                    <td class="py-3">
                                         <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                             {% csrf_token %}
                                             <div class="form-group">
@@ -127,7 +127,7 @@
                                 <td colspan="5" class="text-right">
                                     <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg keep-shopping-text">
                                         <span class="icons">
-                                            <i class="fa fa-chevron-left keep-shopping-text"></i>
+                                            <i class="fa fa-chevron-left"></i>
                                         </span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>

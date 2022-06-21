@@ -409,7 +409,8 @@ a.category-badge > span.badge{
 .main-menu > li {
   display: block;
   position: relative;
-  padding: 20px 10px 20px 0px;
+  /* padding: 20px 10px 20px 0px; */
+  padding: 15px 10px 15px 0px;
   margin: 0px 4px 0px 14px;
 }
 
@@ -520,6 +521,7 @@ a.category-badge > span.badge{
     right: 0px;
     left: auto;
   }
+  
 }
 
 /*------------------------------------------------------------------
@@ -676,6 +678,9 @@ a.category-badge > span.badge{
 .wrap-search-header button:hover {
   color: #6c7ae0;
 }
+.logo-font{
+  margin-top: 30px;
+}
 
 /*---------------------------------------------*/
 @media (max-width: 767px) {
@@ -716,7 +721,8 @@ a.category-badge > span.badge{
 
 .fix-menu-desktop .wrap-menu-desktop {
   
-  height: 70px;
+  /* height: 70px; */
+  
   background-color: rgba(255,255,255,1);
   box-shadow: 0 0px 3px 0px rgba(0,0,0,0.2);
   -moz-box-shadow: 0 0px 3px 0px rgba(0,0,0,0.2);
@@ -842,7 +848,7 @@ a.category-badge > span.badge{
   background-color: white;
   display: none;
   position: fixed;
-  z-index: 2;
+  z-index: 999;
 }
 .btn-black{
   color: #fff;
@@ -1193,7 +1199,7 @@ a.category-badge > span.badge{
   line-height: 1.3;
 }
 .cart-heading{
-  padding-top: 4rem;
+  padding-top: 9rem;
 }
 
 /*---------------------------------------------*/
@@ -1388,6 +1394,10 @@ a.category-badge > span.badge{
   .table-width{
     width: 25%;
   }
+  .cart-heading{
+    padding-top: 6rem;
+  }
+  
 }
 
 
@@ -3621,12 +3631,7 @@ input.num-product::-webkit-inner-spin-button {
 .py-3>p{
   display: none;
 }
-.fa-minus::before{
-  display: none;
-}
-.input-group-prepend,.input-group-append{
-  display: none;
-}
+
 .message-container{
   top: 76px;
 }
