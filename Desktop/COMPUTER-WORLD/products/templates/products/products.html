@@ -480,8 +480,9 @@
                         <!-- <button  style="background-color: green;padding:7px;color:#fff;border-radius:10px;" class="button button--mini-basket button--small js-add-to-mini-basket" data-product-id="870070" data-ajax-basket-url="products" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="Add to Basket Button">Add to Basket</button> -->
                         
                     
-						<a class="button button--secondary button--small d-flex justify-content-center" style="background-color: rgb(11, 161, 230);padding:8px;color:#fff;border-radius:10px;" href="{% url 'product_detail' product.id %}" data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="More Info Button">More Info</a>
-					</div>
+						<a class="button button--secondary button--small d-flex justify-content-center" style="background-color: rgb(11, 161, 230);padding:8px;color:#fff;border-radius:10px;" href="{% url 'product_detail' product.id %}  " data-analytics-event="click" data-event-category="Search Listings - Grid" data-event-action="Product Click" data-event-label="More Info Button">More Info</a>
+				
+                    </div>
 
 					</div>
 					
@@ -508,5 +509,14 @@
 
 </div> 
 
+
+
+
+
+
+
+
+
+    
 
 {% endblock %}
