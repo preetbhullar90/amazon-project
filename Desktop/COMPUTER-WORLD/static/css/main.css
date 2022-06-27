@@ -1191,6 +1191,7 @@ a.category-badge > span.badge{
   opacity: 1;
 }
 
+
 /*---------------------------------------------*/
 .header-cart-item-txt {
   width: calc(100% - 80px);
@@ -1433,7 +1434,7 @@ a.category-badge > span.badge{
   width: auto;
   height: auto;
   font-size: 80px;
-  color: rgba(0,0,0,0.3);
+  color: #fff;
   position: absolute;
   opacity: 0;
   
@@ -1975,6 +1976,9 @@ button.mfp-close {
   border-color: #e7e7e7;
   position: relative;
 }
+.filter-style{
+  line-height: 30px;
+}
 
 .show-search::after,
 .show-filter::after {
@@ -2443,7 +2447,7 @@ input.num-product::-webkit-inner-spin-button {
 
 .stext-105 {
   font-family: Poppins-Regular;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1.466667;
   letter-spacing: 1px;
 }
@@ -3343,7 +3347,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .hov-img0 img{
-  width: 100%;
+  /* width: 100%; */
   -webkit-transition: transform 0.9s ease;
   -o-transition: transform 0.9s ease;
   -moz-transition: transform 0.9s ease;
@@ -3356,6 +3360,10 @@ input.num-product::-webkit-inner-spin-button {
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
   transform: scale(1.1);
+}
+.product-image-style{
+  width: 150px;
+  height: 111px;
 }
 
 /*---------------------------------------------*/
