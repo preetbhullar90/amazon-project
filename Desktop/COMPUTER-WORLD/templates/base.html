@@ -9,6 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Computer world for who love gaming and pc in Southall, England">
+    <meta name="keywords" content="Computer World, england, southall">
     {% endblock %}
 
     {% block extra_meta %}
@@ -65,8 +67,8 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 
-         <!-- Stripe -->
-         <script src="https://js.stripe.com/v3/"></script>
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
 
 
@@ -82,13 +84,14 @@
         <!-- Header desktop -->
         <div class="container-menu-desktop">
             <!-- Topbar -->
-            <div class="top-bar">
+            <!-- <div class="top-bar">
                 <div class="content-topbar flex-sb-m h-full container">
                     <div class="left-top-bar">
                         Free shipping for standard order over ${{free_delivery_threshold}}
+
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="wrap-menu-desktop">
 
@@ -125,6 +128,9 @@
                                 </ul>
                             </li>
 
+
+
+
                             <li class="label1" data-label1="hot">
                                 <a href="{% url 'products' %}?category=deals">DEALS</a>
                             </li>
@@ -133,6 +139,11 @@
                             <li>
                                 <a href="{% url 'products' %}?category=clearance">CLEARANCE</a>
                             </li>
+
+                            <li>
+                                <a href="{% url 'aboutus' %}">ABOUT US
+                                </a>
+                            </li>
                         </ul>
 
                     </div>
@@ -140,7 +151,7 @@
 
 
 
-                    
+
                     <!-- Icon header -->
                     <div class="wrap-icon-header flex-w flex-r-m">
                         <form method="GET" action="{% url 'products' %}" class="search-bar">
@@ -168,7 +179,11 @@
                                     aria-haspopup="true" aria-expanded="false">
                                     <div class="text-center">
                                         <div><i class="fa fa-user fa-lg"></i></div>
-                                        <p class="my-0">Account</p>
+                                        {% if request.user.is_authenticated %}
+                                        <p class="my-0 ">{{request.user}}</p>
+                                        {% else %}
+                                        <p class="my-0">Login/Register</p>
+                                        {% endif %}
                                     </div>
                                 </a>
                                 <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -184,6 +199,9 @@
                                     {% endif %}
                                 </div>
                             </li>
+
+
+
                             <li class="list-inline-item">
                                 <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
                                     href="{% url 'view_bag' %}">
@@ -217,11 +235,33 @@
                 </nav>
 
 
-                
+
             </div>
-            
+
+
+
+
+
+            <div class="top-bar">
+                <div class="content-topbar flex-sb-m h-full container">
+                    <div class="left-top-bar">
+                        Free shipping for standard order over ${{free_delivery_threshold}}
+
+                    </div>
+                </div>
+            </div>
+
 
         </div>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -234,9 +274,25 @@
             </span>
         </div>
 
+
+
+
+        {% block page_header %}
+        {% endblock %}
+
+        {% block content %}
+
+        {% endblock %}
+
     </header>
 
-  
+
+
+
+
+    {% block page_footer %}
+
+    {% endblock %}
 
 
 
@@ -269,17 +325,22 @@
 
 
 
-    {% block page_header %}
-    {% endblock %}
 
-    {% block content %}
-    {% endblock %}
+
+
 
     {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show');
     </script>
     {% endblock %}
+
+
+
+
+
+
+
 
 
 
@@ -294,7 +355,7 @@
     <script src="{% static 'vendor/animsition/js/animsition.min.js'%}"></script>
     <!--===============================================================================================-->
     <script src="{% static 'vendor/bootstrap/js/popper.js'%}"></script>
-    
+
     <!--===============================================================================================-->
     <script src="{% static 'vendor/select2/select2.min.js'%}"></script>
     <script>
@@ -335,7 +396,7 @@
     <!--===============================================================================================-->
     <script src="{% static 'vendor/sweetalert/sweetalert.min.js'%}"></script>
     <script>
-        $('.js-addwish-b2').on('click', function (e) {
+        /*$('.js-addwish-b2').on('click', function (e) {
             e.preventDefault();
         });
 
@@ -347,9 +408,9 @@
                 $(this).addClass('js-addedwish-b2');
                 $(this).off('click');
             });
-        });
+        });*/
 
-        $('.js-addwish-detail').each(function () {
+        /*$('.js-addwish-detail').each(function () {
             var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
 
             $(this).on('click', function () {
@@ -358,16 +419,16 @@
                 $(this).addClass('js-addedwish-detail');
                 $(this).off('click');
             });
-        });
+        });*/
 
         /*---------------------------------------------*/
 
-        $('.js-addcart-detail').each(function () {
+        /*$('.js-addcart-detail').each(function () {
             var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
             $(this).on('click', function () {
                 swal(nameProduct, "is added to cart !", "success");
             });
-        });
+        });*/
 
     </script>
     <!--===============================================================================================-->
@@ -389,6 +450,7 @@
     </script>
     <!--===============================================================================================-->
     <script src="{% static 'js/main.js'%}"></script>
+    <script src="{% static 'js/contact.js'%}"></script>
 
 </body>
 

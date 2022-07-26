@@ -11,7 +11,7 @@
 
 {% block content %}
 <!-- Slider -->
- <section class="section-slide"> 
+<section class="section-slide">
     <div class="wrap-slick1 p-t-120">
         <div class="slick1">
             <div class="item-slick1" style="background-image: url('{% static 'images/banner-3.jpg' %}');">
@@ -19,17 +19,17 @@
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
                         <div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
                             <span class="ltext-101 cl2 respon2 text-light">
-                                Alienware 2022
+                                Razer 2022
                             </span>
                         </div>
                         <div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
                             <h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1 text-light">
-                                NEW MONITOR
+                                NEW CONTROLLER
                             </h2>
                         </div>
 
                         <div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
-                            <a href="{% url 'products' %}?category=monitors"
+                            <a href="{% url 'products' %}?category=components"
                                 class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
                                 Shop Now
                             </a>
@@ -67,7 +67,7 @@
                 <div class="container h-full ">
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
                         <div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
-                            <span class="ltext-101 cl2 respon2 text-white" >
+                            <span class="ltext-101 cl2 respon2 text-white">
                                 Razer Build Pc
                             </span>
                         </div>
@@ -89,16 +89,16 @@
             </div>
         </div>
     </div>
-</section> 
+</section>
 
 
 
 <!-- Banner -->
- <div class="sec-banner bg0 p-t-80 p-b-50">
+<div class="sec-banner bg0 p-t-80 p-b-50">
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-                
+
                 <div class="block1 wrap-pic-w">
                     <img src="{% static 'images/monitor.jpg' %}" alt="IMG-BANNER">
 
@@ -124,8 +124,8 @@
             </div>
 
             <div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-                
-				
+
+
                 <div class="block1 wrap-pic-w">
                     <img src="{% static 'images/banner2.webp' %}" alt="IMG-BANNER">
 
@@ -151,8 +151,8 @@
             </div>
 
             <div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-               
-				
+
+
                 <div class="block1 wrap-pic-w">
                     <img src="{% static 'images/banner-component.jpg' %}" alt="IMG-BANNER">
 
@@ -178,9 +178,126 @@
             </div>
         </div>
     </div>
-</div> 
+</div>
 
 
 
 
+{% endblock %}
+
+
+
+
+
+{% block page_footer %}
+<!-- Footer -->
+<footer class="bg3 p-t-75 p-b-32 pos-absolute  w-100">
+    <div class="container">
+        <div class="row d-flex justify-content-between">
+            <div class="col-sm-6 col-lg-3 p-b-50 text-center">
+                <h4 class="stext-301 cl0 p-b-30 ">
+                    Categories
+                </h4>
+
+                <ul>
+                    <li class="p-b-10">
+                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            Women
+                        </a>
+                    </li>
+
+                    <li class="p-b-10">
+                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            Men
+                        </a>
+                    </li>
+
+                    <li class="p-b-10">
+                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            Shoes
+                        </a>
+                    </li>
+
+                    <li class="p-b-10">
+                        <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                            Watches
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <div class="col-sm-6 col-lg-3 p-b-50 text-center">
+                <h4 class="stext-301 cl0 p-b-30">
+                    GET IN TOUCH
+                </h4>
+
+                <p class="stext-107 cl7 ">
+                    Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call
+                    us
+                    on
+                    (+1) 96 716 6879
+                </p>
+
+                <div class="p-t-27">
+                    <a href="https://www.facebook.com/peetu.90/" target="_blank"
+                        class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+
+                    <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+
+                    <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                        <i class="fa fa-pinterest-p"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 p-b-50 text-center col-md-12">
+                <h4 class="stext-301 cl0 p-b-30">
+                    Newsletter
+                </h4>
+                <div class=" w-full p-b-10 ">
+                              
+                    <p><a class="cl7" href="{%url 'sitemap'%}">Our sitemap</a></p>
+                    
+                
+              </div>
+
+                <form>
+                    <div class="wrap-input1 w-full p-b-4 t">
+                        <input class="input1 bg-none plh1 stext-107 cl7 text-center" type="text" name="email"
+                            placeholder="email@example.com">
+                        <div class="focus-input1 trans-04"></div>
+                    </div>
+
+                    <div class="p-t-18">
+                        <button class=" stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+                            Subscribe
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="p-t-40">
+
+
+            <p class="stext-107 cl6 txt-center">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>
+                    document.write(new Date().getFullYear());
+                </script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by
+                <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a
+                    href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+            </p>
+        </div>
+    </div>
+</footer>
 {% endblock %}
