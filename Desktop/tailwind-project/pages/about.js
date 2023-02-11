@@ -13,6 +13,7 @@ const About = () => {
       width={100000}
       height={1000}
       
+      
     />
     </div>
   )
