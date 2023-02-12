@@ -1,8 +1,7 @@
 import Image from "next/image";
 import { useState, useEffect} from "react";
 import { StarIcon } from '@heroicons/react/24/outline';
-import CurrencyFormat from 'react-currency-format';
-
+import { NumericFormat } from 'react-number-format';
   
 
 const MAX_RATING = 5;
@@ -49,7 +48,8 @@ const Product = ({id, title, price, description, category, image}) => {
 
     <p className="text-sm my-2 line-clamp-2">{description}</p>
     <div className="mb-5">
-<CurrencyFormat value={price} displayType={'text'} thousandSeparator={true} prefix={'£'} renderText={value => <div>{value}</div>}/>
+
+<NumericFormat  value={price} displayType={'text'} thousandSeparator={true} prefix={'£'} renderText={value => <div>{value}</div>}/>
    
     </div>
 
