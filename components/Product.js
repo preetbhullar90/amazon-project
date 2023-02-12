@@ -35,8 +35,9 @@ const Product = ({id, title, price, description, category, image}) => {
            
     <p className="absolute top-2 right-2 text-xs italic text-gray-400">{category}</p>
     <Image 
-     src={image} height={200} width={200}
-    style={{objectFit:"contain"}}
+    style={{objectFit:"contain", margin:"auto"}}
+     src={image} height={200} width={200} 
+    
     />
 
     <h4 className="my3">{title}</h4>
