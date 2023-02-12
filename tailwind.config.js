@@ -14,6 +14,11 @@ module.exports = {
           DEFAULT: "#131921",
         },
       },
+      screens: {
+        'fold': '200px',
+        'other': '260px',
+        // => @media (min-width: 992px) { ... }
+      },
     },
   },
   variants: {
