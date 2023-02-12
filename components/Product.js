@@ -12,18 +12,20 @@ const Product = ({id, title, price, description, category, image}) => {
   
     const [rating, SetRating] = useState(
         Math.floor(Math.random()* (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
+        
     );
 
     const [hasPrime, SetHasPrime] = useState(Math.random() < 0.5)
 
 
-    useEffect(() => {
-        SetRating(rating);
-    }, []);
+    // useEffect(() => {
+    //   SetRating();
+        
+    // }, []);
 
-    useEffect(() => {
-        SetHasPrime(hasPrime);
-    }, []);
+    // useEffect(() => {
+    //     SetHasPrime;
+    // }, []);
   
   
     return (
@@ -41,7 +43,7 @@ const Product = ({id, title, price, description, category, image}) => {
     <div className="flex">
 
 
-{Array(SetRating).fill().map((_, i)=>(
+{Array(rating).fill().map((_, i)=>(
 
 <StarIcon  className="h-5 text-yellow-400" />
 ))}
@@ -54,7 +56,7 @@ const Product = ({id, title, price, description, category, image}) => {
    
     </div>
 
-    {SetHasPrime && (
+    {hasPrime && (
         <div className="flex items-center space-x-2 -mt-5">
             <img className="w-12" src="https://links.papareact.com/fdw" alt="" />
             <p className="text-xs text-gray-500">Free Next-day Delivery</p>
