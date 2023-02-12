@@ -10,15 +10,15 @@ const Header = () => {
     <div className='flex items-center bg-amazon_blue p-1 flex-grow py-2'>
 <div className='mt-2 flex items-center flex-grow sm:flex-grow-0'>
     <Image 
-        src="/images/Chicken-Curry-recipe.jpg"
-        // amazon-project\public\images\Chicken-Curry-recipe.jpg
+        src="/images/amazon-logo.jpg"
+        
         // https://links.papareact.com/f90
         width={90}
         height={40}
         style={{objectFit:"contain"}}
         className='cursor-pointer'
     />
-    <p className='hidden sm:inline text-white items-center pb-5 pr-2'>.co.uk</p>
+    <p className='hidden sm:inline text-white items-center pb-3 pr-2'>.co.uk</p>
 </div>
 
 {/* Search */}
