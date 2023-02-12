@@ -11,11 +11,12 @@ const Header = () => {
 <div className='mt-2 flex items-center flex-grow sm:flex-grow-0'>
     <Image 
         src="https://links.papareact.com/f90"
-        width={150}
+        width={90}
         height={40}
-        props='contain'
+        style={{objectFit:"contain"}}
         className='cursor-pointer'
     />
+    <p className='hidden sm:inline text-white items-center pb-5 pr-2'>.co.uk</p>
 </div>
 
 {/* Search */}
