@@ -31,6 +31,7 @@ const Header = () => {
 <MagnifyingGlassIcon className='h-12 p-4'/>
 </div>
 
+
 {/* right */}
 <div className='text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap'>
     <div className='link' onClick={() => !session ? signIn() : signOut()}>
