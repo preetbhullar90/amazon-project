@@ -1,9 +1,28 @@
-import Header from '../components/Header'
+import Header from '../components/Header';
+import { store } from '../apps/store';
+import { Provider} from 'react-redux';
+import CheckoutProduct from '../components/CheckoutProduct';
+
+
 const Checkout = () => {
+
+  
+
+
   return (
     <div>
+
+ 
+    <Provider  store={store}>
     <Header />
-    checkout
+
+    
+   
+     <CheckoutProduct />
+     </Provider>
+ 
+
+
     </div>
   )
 }

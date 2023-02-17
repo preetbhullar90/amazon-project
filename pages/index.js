@@ -3,7 +3,8 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import Banner from '../components/Banner';
 import ProductFeed from '../components/ProductFeed';
-
+import { store } from '../apps/store'
+import { Provider } from 'react-redux';
 
  function Home({products}) {
   return (
@@ -12,6 +13,7 @@ import ProductFeed from '../components/ProductFeed';
       <Head>
         <title>Amazon 2.0</title>
       </Head>
+      <Provider store={store}>
     <Header />
 
     <main className="max-w-screen-2xl mx-auto">
@@ -23,7 +25,7 @@ import ProductFeed from '../components/ProductFeed';
       />
       
     </main>
-   
+   </Provider>
     </div>
   );
 }
